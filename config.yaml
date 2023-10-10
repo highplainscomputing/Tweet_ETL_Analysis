@@ -1,0 +1,28 @@
+sentiment_classifier:
+  args:
+    task: "text-classification"
+    model_name: "lxyuan/distilbert-base-multilingual-cased-sentiments-student"
+
+emotion_analysis:
+  args:
+    task: "text-classification"
+    model_name: "cardiffnlp/twitter-roberta-base-emotion-multilabel-latest"
+
+database:
+  enabled: true
+  no_sql:
+    db_engine: 'mongodb'
+    user: 'sibtain'
+    host: '0.0.0.0'
+    port: '27017'
+    db_name: 'Tweet_DB'
+    collection: 'tweets'
+
+rest_api:
+  host: 'localhost'
+  port: '8000'
+
+
+
+
+

@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+    api:
+        build: ./
+        ports:
+            - 8080:8080
+        environment:
+            - DB_URL=mongodb://db:27017/sibtain
+        depends_on:
+            - db
+        volumes:
+            - ./:/App
+
+    db:
+        image: mongo
+        ports:
+            - 27017:27017
+        volumes:
+            - tweets:/data/db
+volumes:
+    tweets:
